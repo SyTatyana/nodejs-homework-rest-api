@@ -13,7 +13,7 @@ router.post(
   ctrlWrapper(ctrl.register)
 );
 
-router.get(
+router.post(
   "/login",
   validateBody(schemas.loginSchema),
   ctrlWrapper(ctrl.login)
