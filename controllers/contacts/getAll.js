@@ -16,7 +16,7 @@ const getAll = async (req, res) => {
       limit,
     })
       .populate("owner", "name email")
-      .find({ favorite: { $eq: favorite } });
+      .find({ favorite: { req: favorite } });
     res.json(result);
   }
 };
