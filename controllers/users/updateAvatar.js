@@ -13,7 +13,7 @@ const updateAvatar = async (req, res) => {
   try {
     const resultUpload = path.join(avatarsDir, imageName);
     await fs.rename(tempUpload, resultUpload);
-    const avatarURL = path.join("public", "avatars", imageName);
+    const avatarURL = `http://localhost:${PORT}/avatars/${imageName}`;
     Jimp.read(avatarURL).then((avatar) => {
       return avatar.resize(250, 250).write(avatarURL);
     });
