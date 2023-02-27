@@ -28,7 +28,6 @@ const register = async (req, res) => {
   await sendEmail(mail);
 
   res.status(201).json({
-    password: result.password,
     email: result.email,
     subscription: result.subscription,
   });
